@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101124">
+  <title>لویرا | دنیای دورهمی و سرگرمی</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background: #101124;
+      color: #f5f5ff;
+    }
+    header {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: #17182f;
+      border-bottom: 1px solid #292a49;
+    }
+    .logo { font-size: 27px; font-weight: bold; color: #a99aff; }
+    .logo span { color: #f28bd3; }
+    .profile { color: #c9c6e9; font-size: 13px; }
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - 72px);
+    }
+    aside {
+      padding: 25px 15px;
+      background: #17182f;
+      border-left: 1px solid #292a49;
+    }
+    aside a {
+      display: block;
+      color: #c5c4dd;
+      padding: 14px;
+      margin-bottom: 7px;
+      text-decoration: none;
+      border-radius: 12px;
+    }
+    aside a.active, aside a:hover { background: #302b59; color: white; }
+    main { padding: 35px 5%; max-width: 1200px; width: 100%; margin: auto; }
+    .hero {
+      padding: 38px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #37306f, #702e76);
+      margin-bottom: 35px;
+    }
+    .hero h1 { font-size: 32px; margin-top: 0; }
+    .hero p { color: #e4dcff; line-height: 2; }
+    .section-title { margin: 30px 0 18px; font-size: 20px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #1b1c36;
+      border: 1px solid #303153;
+      padding: 22px;
+      border-radius: 17px;
+      min-height: 130px;
+    }
+    .card h3 { margin-top: 0; color: #c4b5ff; }
+    .card p { color: #aaa9c7; font-size: 13px; line-height: 1.9; }
+    .notice {
+      padding: 18px;
+      border-radius: 13px;
+      background: #20213b;
+      color: #aaa9c7;
+      margin-top: 25px;
+      font-size: 13px;
+      line-height: 2;
+    }
+    footer { text-align: center; color: #777792; padding: 30px; font-size: 12px; }
+    @media(max-width:700px) {
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        display: flex;
+        overflow-x: auto;
+        padding: 9px;
+        border-left: 0;
+        border-bottom: 1px solid #292a49;
+      }
+      aside a { white-space: nowrap; margin: 0 3px; padding: 12px; }
+      main { padding: 22px 16px; }
+      .hero { padding: 25px; }
+      .hero h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">LOYRA<span>.</span></div>
+    <div class="profile">دنیای مشترک ما</div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <a class="active" href="#">خانه</a>
+      <a href="#games">بازی‌ها</a>
+      <a href="#rooms">اتاق‌های دورهمی</a>
+      <a href="#friends">دوستان</a>
+      <a href="#missions">مأموریت‌ها</a>
+      <a href="#shop">فروشگاه</a>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <h1>به دنیای لویرا خوش اومدی!</h1>
+        <p>اینجا قراره کنار دوستانت بازی کنی، گپ بزنی و لحظه‌های تازه‌ای بسازی.</p>
+      </section>
+
+      <h2 class="section-title" id="games">بازی‌ها</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>دوز</h3>
+          <p>یک رقابت دوستانه و سریع</p>
+        </div>
+        <div class="card">
+          <h3>منچ</h3>
+          <p>بازی دورهمی و خاطره‌انگیز</p>
+        </div>
+        <div class="card">
+          <h3>اسم و فامیل</h3>
+          <p>سرعت، خلاقیت و رقابت</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" id="rooms">اتاق‌های دورهمی</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>اتاق جدید</h3>
+          <p>ساخت اتاق در نسخه‌های بعدی فعال می‌شود.</p>
+        </div>
+        <div class="card">
+          <h3>اتاق‌های دوستان</h3>
+          <p>هنوز اتاق فعالی ثبت نشده است.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" id="friends">دوستان</h2>
+      <div class="card">
+        <h3>ارتباط با دوستان</h3>
+        <p>امکانات افزودن دوست و گفت‌وگوی آنلاین در حال توسعه است.</p>
+      </div>
+
+      <h2 class="section-title" id="missions">مأموریت‌ها</h2>
+      <div class="card">
+        <h3>ماجراجویی‌های لویرا</h3>
+        <p>مأموریت‌ها هنوز فعال نشده‌اند.</p>
+      </div>
+
+      <h2 class="section-title" id="shop">فروشگاه</h2>
+      <div class="card">
+        <h3>فروشگاه لویرا</h3>
+        <p>این بخش هنوز راه‌اندازی نشده است.</p>
+      </div>
+
+      <div class="notice">
+        این نسخه، پیش‌نمایش اولیه رابط کاربری لویرا است.
+        امکانات آنلاین تا زمان راه‌اندازی زیرساخت واقعی فعال نیستند.
+      </div>
+    </main>
+  </div>
+
+  <footer>LOYRA © 2026 | دنیای دورهمی و سرگرمی</footer>
+</body>
+</html>
