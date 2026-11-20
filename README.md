@@ -1,2 +1,517 @@
-# loyra
-Loyra - Social Entertainment Platform
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17132e">
+<title>LOYRA | دنیای سرگرمی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg:#17132e;
+  --panel:#211b3e;
+  --panel2:#29224b;
+  --white:#fff;
+  --muted:#b9b1d6;
+  --purple:#a78bfa;
+  --pink:#ff78c8;
+  --cyan:#52e5e0;
+  --blue:#70a7ff;
+  --yellow:#ffd66e;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  color:var(--white);
+  background:
+    radial-gradient(ellipse at 10% 10%,#6538a844,transparent 35%),
+    radial-gradient(ellipse at 90% 35%,#087d9a30,transparent 32%),
+    radial-gradient(ellipse at 50% 100%,#a22d8040,transparent 35%),
+    var(--bg);
+  font-family:'Vazirmatn',Tahoma,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button { font-family:inherit; cursor:pointer; color:inherit; }
+
+.glow {
+  position:fixed;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.18;
+  pointer-events:none;
+  z-index:-1;
+  animation:float 9s ease-in-out infinite alternate;
+}
+.glow.one { background:#a855f7;top:10%;right:-100px; }
+.glow.two { background:#06d6d6;bottom:10%;left:-100px;animation-delay:2s; }
+
+@keyframes float {
+  from { transform:translate(0,0) scale(1); }
+  to { transform:translate(30px,-40px) scale(1.25); }
+}
+
+.app {
+  width:min(100%,1100px);
+  margin:auto;
+  padding:0 17px 110px;
+}
+
+header {
+  height:76px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ffffff13;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo {
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  background:linear-gradient(135deg,#ff78c8,#a78bfa 55%,#52e5e0);
+  color:white;
+  box-shadow:0 0 25px #a78bfa88;
+  animation:logoGlow 3s infinite alternate;
+}
+
+@keyframes logoGlow {
+  to { box-shadow:0 0 30px #52e5e099,0 0 55px #ff78c844; }
+}
+
+.header-right {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.status {
+  color:#78f1d0;
+  font-size:11px;
+  background:#52e5e015;
+  border:1px solid #52e5e044;
+  border-radius:30px;
+  padding:7px 11px;
+}
+
+.hero {
+  margin-top:25px;
+  padding:28px 23px;
+  border:1px solid #ffffff20;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(circle at 10% 90%,#ff78c833,transparent 40%),
+    radial-gradient(circle at 90% 10%,#52e5e833,transparent 40%),
+    linear-gradient(125deg,#38265f,#27204b 60%,#203957);
+  box-shadow:0 18px 55px #0003;
+}
+
+.hero:after {
+  content:"✦";
+  position:absolute;
+  left:25px;
+  top:25px;
+  font-size:65px;
+  color:#ffffff18;
+  animation:spin 18s linear infinite;
+}
+
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.hero-label {
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:30px;
+  background:#ffffff16;
+  border:1px solid #ffffff28;
+  color:#e8d8ff;
+  font-size:11px;
+}
+
+.hero h1 {
+  font-size:clamp(28px,7vw,43px);
+  line-height:1.5;
+  margin:17px 0 8px;
+  font-weight:900;
+}
+
+.gradient-text {
+  background:linear-gradient(90deg,#ff9bd7,#c5a8ff,#71f0e8);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p {
+  color:#d1c8e8;
+  font-size:13px;
+  line-height:2.2;
+  max-width:470px;
+}
+
+.actions { display:flex;gap:11px;flex-wrap:wrap;margin-top:20px; }
+
+.btn {
+  position:relative;
+  overflow:hidden;
+  border:0;
+  border-radius:14px;
+  padding:12px 19px;
+  font-size:13px;
+  font-weight:800;
+  transition:transform .25s,box-shadow .25s,filter .25s;
+}
+
+.btn:before {
+  content:"";
+  position:absolute;
+  top:-80%;left:-60%;
+  width:35%;height:260%;
+  transform:rotate(25deg);
+  background:#ffffff55;
+  transition:left .6s;
+}
+
+.btn:hover:before { left:130%; }
+.btn:hover { transform:translateY(-3px);filter:brightness(1.13); }
+.btn:active { transform:scale(.94); }
+
+.primary {
+  background:linear-gradient(110deg,#ff78c8,#a78bfa 55%,#70a7ff);
+  box-shadow:0 6px 25px #a78bfa66;
+  color:#fff;
+  animation:buttonGlow 3s infinite alternate;
+}
+
+@keyframes buttonGlow {
+  to { box-shadow:0 7px 30px #ff78c877,0 0 12px #70a7ff44; }
+}
+
+.secondary {
+  background:#ffffff12;
+  border:1px solid #ffffff30;
+  color:white;
+}
+
+.section { margin-top:30px; }
+
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.section-head h2 { font-size:17px;margin:0; }
+.section-head span { color:var(--muted);font-size:11px; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.card {
+  text-align:right;
+  min-height:132px;
+  padding:15px;
+  border-radius:21px;
+  border:1px solid #ffffff16;
+  background:linear-gradient(145deg,#ffffff0c,#ffffff05);
+  box-shadow:0 8px 25px #0002;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+  animation:cardEnter .5s both;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:#a78bfa88;
+  box-shadow:0 12px 30px #a78bfa22;
+}
+
+.card:active { transform:scale(.96); }
+
+@keyframes cardEnter {
+  from { opacity:0;transform:translateY(12px); }
+  to { opacity:1;transform:translateY(0); }
+}
+
+.card-icon {
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  font-size:22px;
+  margin-bottom:12px;
+  background:var(--card-color,#a78bfa22);
+  box-shadow:0 0 20px var(--card-glow,#a78bfa33);
+}
+
+.card strong { display:block;font-size:14px; }
+.card small { color:var(--muted);font-size:11px; }
+
+.c-purple { --card-color:#a78bfa25;--card-glow:#a78bfa55; }
+.c-pink { --card-color:#ff78c825;--card-glow:#ff78c855; }
+.c-cyan { --card-color:#52e5e025;--card-glow:#52e5e055; }
+.c-blue { --card-color:#70a7ff25;--card-glow:#70a7ff55; }
+.c-yellow { --card-color:#ffd66e25;--card-glow:#ffd66e55; }
+
+.panel {
+  border:1px solid #ffffff16;
+  border-radius:21px;
+  background:#ffffff08;
+  padding:18px;
+}
+
+.empty {
+  text-align:center;
+  padding:25px 10px;
+}
+
+.empty .emoji { font-size:35px; }
+.empty h3 { font-size:15px;margin:10px 0 5px; }
+.empty p { font-size:12px;color:var(--muted);line-height:2;margin:0; }
+
+.notice {
+  margin-top:25px;
+  padding:14px;
+  border-radius:15px;
+  background:#ffd66e0d;
+  border:1px solid #ffd66e35;
+  color:#f4d58e;
+  font-size:11px;
+  line-height:2;
+}
+
+.page { display:none;animation:pageIn .3s ease; }
+.page.active { display:block; }
+
+@keyframes pageIn {
+  from { opacity:0;transform:translateY(9px); }
+  to { opacity:1;transform:translateY(0); }
+}
+
+.page-title { font-size:25px;margin:13px 0 5px; }
+.page-desc { color:var(--muted);font-size:12px;line-height:2;margin:0 0 20px; }
+
+.game-list { display:grid;gap:12px; }
+
+.game {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:14px;
+  border-radius:18px;
+  border:1px solid #ffffff16;
+  background:#ffffff09;
+  transition:.25s;
+}
+.game:hover { transform:translateX(-4px);border-color:#a78bfa88; }
+.game .card-icon { margin:0;flex-shrink:0; }
+.game strong { font-size:13px; }
+.game small { display:block;color:var(--muted);font-size:10px;margin-top:4px; }
+.soon { margin-right:auto;color:#d4baff;font-size:10px; }
+
+.bottom-nav {
+  position:fixed;
+  z-index:20;
+  bottom:0;left:0;right:0;
+  padding:9px 10px calc(9px + env(safe-area-inset-bottom));
+  background:#19152cf0;
+  border-top:1px solid #ffffff18;
+  backdrop-filter:blur(20px);
+}
+
+.nav-inner {
+  width:min(100%,650px);
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+}
+
+.nav-btn {
+  background:transparent;
+  border:0;
+  border-radius:14px;
+  padding:8px 2px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  color:#aaa3c5;
+  font-size:10px;
+  transition:.25s;
+}
+
+.nav-icon { font-size:21px;transition:.25s; }
+
+.nav-btn.active {
+  color:#fff;
+  background:linear-gradient(135deg,#a78bfa35,#52e5e020);
+  box-shadow:inset 0 0 15px #a78bfa15,0 0 15px #a78bfa20;
+}
+
+.nav-btn.active .nav-icon {
+  transform:translateY(-3px) scale(1.1);
+  filter:drop-shadow(0 0 7px #c4aaff);
+}
+
+button:focus-visible {
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
+
+@media(min-width:700px) {
+  .app { padding-left:30px;padding-right:30px; }
+  .grid { grid-template-columns:repeat(4,1fr); }
+  .hero { padding:40px; }
+  .bottom-nav {
+    left:50%;right:auto;transform:translateX(-50%);
+    width:min(100%,720px);
+    border:1px solid #ffffff18;
+    border-bottom:0;
+    border-radius:20px 20px 0 0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<div class="app">
+<header>
+  <div class="brand">
+    <div class="logo">ل</div>
+    <span>LOYRA</span>
+  </div>
+  <div class="header-right">
+    <span class="status">● دنیای لویرا</span>
+  </div>
+</header>
+
+<main>
+<section class="page active" id="home">
+  <div class="hero">
+    <span class="hero-label">✦ خوش اومدی به لویرا</span>
+    <h1>دنیای تو،<br><span class="gradient-text">قانون‌های تو!</span></h1>
+    <p>اینجا قراره بازی کنیم، دوست پیدا کنیم و لحظه‌های قشنگی کنار هم بسازیم. آماده‌ای؟</p>
+    <div class="actions">
+      <button class="btn primary" onclick="showPage('games')">شروع سرگرمی ←</button>
+      <button class="btn secondary" onclick="showPage('friends')">دوست‌هام</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>دسترسی سریع</h2><span>همه‌چیز یک‌جا</span></div>
+    <div class="grid">
+      <button class="card c-purple" onclick="showPage('games')">
+        <div class="card-icon">🎮</div><strong>بازی‌ها</strong><small>وقت سرگرمیه!</small>
+      </button>
+      <button class="card c-pink" onclick="showPage('messages')">
+        <div class="card-icon">💬</div><strong>پیام‌ها</strong><small>گپ با دوستات</small>
+      </button>
+      <button class="card c-cyan" onclick="showPage('friends')">
+        <div class="card-icon">👥</div><strong>دوستان</strong><small>جمع خودت رو بساز</small>
+      </button>
+      <button class="card c-blue" onclick="showPage('profile')">
+        <div class="card-icon">✨</div><strong>پروفایل</strong><small>فضای شخصی تو</small>
+      </button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>دورهمی‌ها</h2><span>اتاق‌های لویرا</span></div>
+    <div class="panel empty">
+      <div class="emoji">🏡</div>
+      <h3>هنوز دورهمی‌ای وجود نداره</h3>
+      <p>وقتی اتاق‌ها راه‌اندازی بشن، اینجا می‌تونی دورهمی‌های واقعی رو ببینی.</p>
+    </div>
+  </div>
+
+  <div class="notice">این نسخه شامل طراحی جدید رابط کاربری است. ثبت‌نام، پیام‌رسانی، اتاق‌ها و بازی آنلاین هنوز به سرور متصل نشده‌اند.</div>
+</section>
+
+<section class="page" id="games">
+  <h1 class="page-title">بازی‌ها 🎮</h1>
+  <p class="page-desc">یه بازی انتخاب کن؛ قراره کلی خوش بگذره!</p>
+  <div class="game-list">
+    <div class="game"><div class="card-icon c-purple">⭕</div><div><strong>دوز</strong><small>رقابت دونفره</small></div><span class="soon">به‌زودی</span></div>
+    <div class="game"><div class="card-icon c-pink">🎲</div><div><strong>منچ</strong><small>بازی گروهی</small></div><span class="soon">به‌زودی</span></div>
+    <div class="game"><div class="card-icon c-cyan">📝</div><div><strong>اسم و فامیل</strong><small>سرگرمی دسته‌جمعی</small></div><span class="soon">به‌زودی</span></div>
+    <div class="game"><div class="card-icon c-yellow">🃏</div><div><strong>حکم</strong><small>بازی کارتی</small></div><span class="soon">به‌زودی</span></div>
+  </div>
+</section>
+
+<section class="page" id="friends">
+  <h1 class="page-title">دوستان 👥</h1>
+  <p class="page-desc">جمع لویرا رو با دوستات کامل کن.</p>
+  <div class="panel empty"><div class="emoji">🌈</div><h3>هنوز دوستی اضافه نشده</h3><p>قابلیت جست‌وجو و افزودن دوست در نسخه‌های بعدی فعال می‌شه.</p></div>
+</section>
+
+<section class="page" id="messages">
+  <h1 class="page-title">پیام‌ها 💬</h1>
+  <p class="page-desc">گفت‌وگوهای تو در این بخش قرار می‌گیرن.</p>
+  <div class="panel empty"><div class="emoji">💌</div><h3>اینجا فعلاً ساکته!</h3><p>با راه‌اندازی پیام‌رسانی، گفت‌وگوهای واقعی اینجا نمایش داده می‌شن.</p></div>
+</section>
+
+<section class="page" id="profile">
+  <h1 class="page-title">پروفایل من ✨</h1>
+  <p class="page-desc">اینجا فضای شخصی تو در لویراست.</p>
+  <div class="panel empty"><div class="emoji">🪄</div><h3>هنوز وارد حساب نشدی</h3><p>سیستم حساب کاربری در مرحله طراحی قرار داره.</p></div>
+</section>
+</main>
+</div>
+
+<nav class="bottom-nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-page="home" onclick="showPage('home')"><span class="nav-icon">⌂</span><span>خانه</span></button>
+    <button class="nav-btn" data-page="games" onclick="showPage('games')"><span class="nav-icon">🎮</span><span>بازی‌ها</span></button>
+    <button class="nav-btn" data-page="friends" onclick="showPage('friends')"><span class="nav-icon">♧</span><span>دوستان</span></button>
+    <button class="nav-btn" data-page="messages" onclick="showPage('messages')"><span class="nav-icon">✉</span><span>پیام‌ها</span></button>
+    <button class="nav-btn" data-page="profile" onclick="showPage('profile')"><span class="nav-icon">◉</span><span>پروفایل</span></button>
+  </div>
+</nav>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.toggle('active', page.id === id);
+  });
+
+  document.querySelectorAll('.nav-btn').forEach(button => {
+    button.classList.toggle('active', button.dataset.page === id);
+  });
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
