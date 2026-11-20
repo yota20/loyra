@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090817">
+  <meta name="description" content="لویرا؛ دنیای بازی، رقابت و دورهمی‌های تو">
+  <title>LOYRA | دنیای بازی و دورهمی</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="scanlines"></div>
+
+  <!-- Header -->
+  <header class="topbar">
+
+    <a class="brand" href="#" data-go="home" aria-label="صفحه اصلی لویرا">
+      <span class="brand-mark"><span>L</span><i></i></span>
+      <span class="brand-word">
+        LOYRA
+        <small>PLAY · CONNECT · REPEAT</small>
+      </span>
+    </a>
+
+    <div class="topbar-center">
+      <span class="live-dot"></span>
+      دنیای تو، دورهمی‌های تو
+    </div>
+
+    <div class="top-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="تغییر پوسته">
+        <span id="themeIcon">☀</span>
+      </button>
+
+      <button class="profile-chip" type="button" data-go="profile">
+        <span class="avatar">L</span>
+        <span class="profile-chip-text">پروفایل من</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Application Layout -->
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <div class="side-label">فضای لویرا</div>
+
+        <nav class="side-nav" aria-label="منوی اصلی">
+
+          <button class="nav-item active" type="button" data-page="home">
+            <span class="nav-icon">⌂</span>
+            <span>خانه</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="games">
+            <span class="nav-icon">▦</span>
+            <span>بازی‌ها</span>
+            <span class="nav-count">۰۲</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="rooms">
+            <span class="nav-icon">◉</span>
+            <span>اتاق‌های بازی</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="friends">
+            <span class="nav-icon">♧</span>
+            <span>دوستان</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="messages">
+            <span class="nav-icon">▤</span>
+            <span>پیام‌ها</span>
+          </button>
+
+        </nav>
+
+        <div class="side-divider"></div>
+
+        <div class="side-label">بیشتر کشف کن</div>
+
+        <nav class="side-nav" aria-label="امکانات بیشتر">
+
+          <button class="nav-item" type="button" data-page="missions">
+            <span class="nav-icon">✧</span>
+            <span>مأموریت‌ها</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="shop">
+            <span class="nav-icon">◇</span>
+            <span>فروشگاه</span>
+          </button>
+
+          <button class="nav-item" type="button" data-page="profile">
+            <span class="nav-icon">◎</span>
+            <span>پروفایل</span>
+          </button>
+
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+
+        <div class="mini-promo">
+          <div class="promo-orbit">✦</div>
+          <b>ماجراجویی تازه؟</b>
+          <p>بازی موردعلاقه‌ات رو پیدا کن و شروع کن.</p>
+          <button type="button" data-go="games">
+            کشف بازی‌ها <span>←</span>
+          </button>
+        </div>
+
+        <div class="side-version">
+          LOYRA WEB <span>v1.0</span>
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+      <!-- HOME -->
+      <section class="page active" id="page-home">
+
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-line"></span>
+              به دنیای لویرا خوش اومدی
+            </div>
+
+            <h1>
+              وقتشه یه
+              <span class="gradient-text">خاطره</span>
+              بسازی.
+            </h1>
+
+            <p class="page-lead">
+              بازی کن، رقابت کن، کشف کن؛ دنیای سرگرمی از اینجا شروع می‌شه.
+            </p>
+          </div>
+
+          <div class="date-pill">
+            <span>✦</span>
+            دنیای بازی، همیشه روشن
+          </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="hero-panel">
+
+          <div class="hero-grid"></div>
+          <div class="hero-spark spark-a">✦</div>
+          <div class="hero-spark spark-b">✧</div>
+
+          <div class="hero-copy">
+
+            <span class="hero-kicker">
+              <i></i>
+              LEVEL UP YOUR DAY
+            </span>
+
+            <h2>بازی فقط شروع ماجراست.</h2>
+
+            <p>
+              یه بازی انتخاب کن، دوستات رو جمع کن و لحظه‌هایی بساز
+              که ارزش تکرار دارن.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-button" type="button" data-go="games">
+                بزن بریم بازی <span>←</span>
+              </button>
+
+              <button class="ghost-button" type="button" data-go="missions">
+                دیدن مأموریت‌ها
+              </button>
+            </div>
+
+            <div class="hero-foot">
+              <span>01 <i></i> PLAY</span>
+              <span>02 <i></i> CONNECT</span>
+              <span>03 <i></i> REPEAT</span>
+            </div>
+
+          </div>
+
+          <div class="hero-art">
+            <div class="arcade-ring ring-one"></div>
+            <div class="arcade-ring ring-two"></div>
+
+            <div class="arcade-core">
+              <span class="core-cross">✣</span>
+              <b>L</b>
+              <small>INSERT FUN</small>
+            </div>
+
+            <span class="float-token token-one">✦</span>
+            <span class="float-token token-two">✧</span>
+            <span class="float-token token-three">◆</span>
+
+            <div class="pixel-block"></div>
+          </div>
+
+        </section>
+
+        <!-- Quick Games -->
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">START PLAYING</span>
+            <h2>شروع سریع</h2>
+          </div>
+
+          <button class="text-link" type="button" data-go="games">
+            همه بازی‌ها <span>←</span>
+          </button>
+        </div>
+
+        <div class="quick-grid">
+
+          <button class="quick-card quick-purple" type="button" data-game="tic">
+            <span class="quick-symbol">×○</span>
+            <span class="quick-tag">۲ نفره</span>
+            <b>دوز</b>
+            <small>یه رقابت سریع و دوستانه</small>
+            <span class="quick-arrow">↗</span>
+          </button>
+
+          <button class="quick-card quick-cyan" type="button" data-game="reaction">
+            <span class="quick-symbol">⚡</span>
+            <span class="quick-tag">تک‌نفره</span>
+            <b>تست واکنش</b>
+            <small>سرعت عملت رو بسنج</small>
+            <span class="quick-arrow">↗</span>
+          </button>
+
+          <button class="quick-card quick-pink" type="button" data-go="rooms">
+            <span class="quick-symbol">⌘</span>
+            <span class="quick-tag">اجتماعی</span>
+            <b>اتاق بازی</b>
+            <small>دورهمی‌های گروهی</small>
+            <span class="quick-arrow">↗</span>
+          </button>
+
+        </div>
+
+        <!-- Featured -->
+        <div class="section-heading games-heading">
+          <div>
+            <span class="section-kicker">HANDPICKED FOR YOU</span>
+            <h2>پیشنهاد لویرا</h2>
+          </div>
+
+          <button class="text-link" type="button" data-go="games">
+            بیشتر ببین <span>←</span>
+          </button>
+        </div>
+
+        <div class="featured-grid">
+
+          <article class="featured-card feature-tic">
+            <div class="feature-art">
+              <span>×</span><i>○</i><b>+</b>
+            </div>
+
+            <div class="feature-info">
+              <span class="game-type">کلاسیک · دونفره</span>
+              <h3>دوز</h3>
+              <p>فکری، سریع و همیشه جذاب.</p>
+
+              <button class="small-play" type="button" data-game="tic">
+                بازی کن <span>←</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="featured-card feature-react">
+            <div class="feature-art">
+              <span>ϟ</span><i class="orbit-dot"></i><b>!</b>
+            </div>
+
+            <div class="feature-info">
+              <span class="game-type">مهارتی · تک‌نفره</span>
+              <h3>تست واکنش</h3>
+              <p>ببین چقدر سریع تصمیم می‌گیری.</p>
+
+              <button class="small-play" type="button" data-game="reaction">
+                شروع کن <span>←</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="featured-card feature-soon">
+            <div class="feature-art">
+              <span>♜</span><i>✦</i><b>♞</b>
+            </div>
+
+            <div class="feature-info">
+              <span class="game-type">استراتژی · به‌زودی</span>
+              <h3>شطرنج</h3>
+              <p>برای نبردهای هوشمندانه.</p>
+              <span class="soon-label">به‌زودی</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Notice -->
+        <div class="notice-strip">
+          <span class="notice-icon">ⓘ</span>
+
+          <div>
+            <b>لویرا هنوز در حال ساخته.</b>
+            <p>
+              بازی‌های قابل اجرا مشخص شدن؛ قابلیت‌های آنلاین
+              بعد از راه‌اندازی سرور فعال می‌شن.
+            </p>
+          </div>
+
+          <button type="button" data-go="rooms">
+            جزئیات بیشتر
+          </button>
+        </div>
+
+      </section>
+
+      <!-- GAMES -->
+      <section class="page" id="page-games">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">THE ARCADE</span>
+            <h1>دنیای <span class="gradient-text">بازی‌ها</span></h1>
+            <p class="page-lead">
+              بازی موردعلاقه‌ات رو پیدا کن و وارد رقابت شو.
+            </p>
+          </div>
+
+          <div class="game-total">
+            <b id="gameCount">۶ بازی</b>
+            <span>در فهرست</span>
+          </div>
+        </div>
+
+        <div class="game-toolbar">
+
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="gameSearch"
+              type="search"
+              placeholder="اسم بازی رو جست‌وجو کن..."
+              autocomplete="off"
+            >
+            <kbd>/</kbd>
+          </label>
+
+          <div class="filter-row">
+            <button class="filter-button active" type="button" data-filter="all">همه</button>
+            <button class="filter-button" type="button" data-filter="two">دونفره</button>
+            <button class="filter-button" type="button" data-filter="solo">تک‌نفره</button>
+            <button class="filter-button" type="button" data-filter="classic">کلاسیک</button>
+            <button class="filter-button" type="button" data-filter="soon">به‌زودی</button>
+          </div>
+
+        </div>
+
+        <div class="game-grid" id="gameGrid">
+
+          <article class="game-card" data-name="دوز tic tac toe" data-category="two classic" data-id="tic">
+            <div class="game-cover cover-tic">
+              <span>×</span><i>○</i><b>+</b>
+              <em>CLASSIC MODE</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">دونفره · کلاسیک</span>
+                <h3>دوز</h3>
+              </div>
+              <button class="play-round" type="button" data-game="tic" aria-label="شروع بازی دوز">↗</button>
+            </div>
+            <div class="game-card-foot">
+              <span class="available-dot"></span>
+              قابل بازی در همین مرورگر
+            </div>
+          </article>
+
+          <article class="game-card" data-name="تست واکنش reaction" data-category="solo" data-id="reaction">
+            <div class="game-cover cover-reaction">
+              <span>ϟ</span><i></i><b>!</b>
+              <em>REACTION LAB</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">تک‌نفره · مهارتی</span>
+                <h3>تست واکنش</h3>
+              </div>
+              <button class="play-round" type="button" data-game="reaction" aria-label="شروع تست واکنش">↗</button>
+            </div>
+            <div class="game-card-foot">
+              <span class="available-dot"></span>
+              قابل بازی در همین مرورگر
+            </div>
+          </article>
+
+          <article class="game-card" data-name="شطرنج chess" data-category="two classic soon" data-id="chess">
+            <div class="game-cover cover-chess">
+              <span>♜</span><i>♞</i><b>♛</b>
+              <em>STRATEGY ZONE</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">دونفره · استراتژی</span>
+                <h3>شطرنج</h3>
+              </div>
+              <span class="soon-label">به‌زودی</span>
+            </div>
+            <div class="game-card-foot">
+              <span class="muted-dot"></span>
+              هنوز پیاده‌سازی نشده
+            </div>
+          </article>
+
+          <article class="game-card" data-name="منچ ludo" data-category="two group soon" data-id="ludo">
+            <div class="game-cover cover-ludo">
+              <span>●</span><i>◆</i><b>●</b>
+              <em>PARTY TABLE</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">گروهی · رومیزی</span>
+                <h3>منچ</h3>
+              </div>
+              <span class="soon-label">به‌زودی</span>
+            </div>
+            <div class="game-card-foot">
+              <span class="muted-dot"></span>
+              هنوز پیاده‌سازی نشده
+            </div>
+          </article>
+
+          <article class="game-card" data-name="اسم فامیل name family" data-category="group classic soon" data-id="name">
+            <div class="game-cover cover-name">
+              <span>الف</span><i>ب</i><b>؟</b>
+              <em>WORD BATTLE</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">گروهی · کلمه‌ای</span>
+                <h3>اسم فامیل</h3>
+              </div>
+              <span class="soon-label">به‌زودی</span>
+            </div>
+            <div class="game-card-foot">
+              <span class="muted-dot"></span>
+              هنوز پیاده‌سازی نشده
+            </div>
+          </article>
+
+          <article class="game-card" data-name="مافیا mafia" data-category="group soon" data-id="mafia">
+            <div class="game-cover cover-mafia">
+              <span>♠</span><i>◉</i><b>؟</b>
+              <em>HIDDEN ROLES</em>
+            </div>
+            <div class="game-card-body">
+              <div>
+                <span class="game-meta">گروهی · نقش مخفی</span>
+                <h3>مافیا</h3>
+              </div>
+              <span class="soon-label">به‌زودی</span>
+            </div>
+            <div class="game-card-foot">
+              <span class="muted-dot"></span>
+              هنوز پیاده‌سازی نشده
+            </div>
+          </article>
+
+        </div>
+
+        <div class="empty-state" id="gameEmpty" hidden>
+          <span>⌕</span>
+          <h3>چیزی پیدا نکردیم!</h3>
+          <p>اسم بازی یا فیلتر رو تغییر بده.</p>
+          <button class="secondary-button" id="clearSearch" type="button">
+            پاک کردن جست‌وجو
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ROOMS -->
+      <section class="page" id="page-rooms">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">PLAY TOGETHER</span>
+            <h1>اتاق‌های <span class="gradient-text">بازی</span></h1>
+            <p class="page-lead">
+              برای بازی گروهی، اتاق اختصاصی بساز یا با کد وارد شو.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-empty-panel">
+          <div class="empty-illustration">⌘</div>
+          <span class="status-pill">زیرساخت آنلاین لازم است</span>
+          <h2>دورهمی آنلاین در راهه</h2>
+          <p>
+            ساخت اتاق، کد دعوت و اتصال بازیکن‌ها به سرور نیاز داره.
+            این بخش هنوز به سرور متصل نیست.
+          </p>
+          <div class="empty-actions">
+            <button class="primary-button" type="button" data-go="games">
+              فعلاً بازی‌های آماده <span>←</span>
+            </button>
+          </div>
+          <small>وضعیت: <b>هنوز پیاده‌سازی نشده</b></small>
+        </div>
+
+      </section>
+
+      <!-- FRIENDS -->
+      <section class="page" id="page-friends">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">YOUR CREW</span>
+            <h1>لیست <span class="gradient-text">دوستان</span></h1>
+            <p class="page-lead">
+              آدم‌های موردعلاقه‌ات رو به دورهمی دعوت کن.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-empty-panel compact-empty">
+          <div class="empty-illustration">♧</div>
+          <span class="status-pill">نیازمند حساب کاربری</span>
+          <h2>دوستات اینجا جمع می‌شن</h2>
+          <p>
+            افزودن دوست با شناسه لویرا، درخواست دوستی و دعوت به بازی
+            پس از راه‌اندازی حساب و سرور فعال می‌شه.
+          </p>
+          <small>وضعیت: <b>هنوز پیاده‌سازی نشده</b></small>
+        </div>
+
+      </section>
+
+      <!-- MESSAGES -->
+      <section class="page" id="page-messages">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">SAY HELLO</span>
+            <h1>پیام‌های <span class="gradient-text">تو</span></h1>
+            <p class="page-lead">گفت‌وگوها و هماهنگی‌های بازی.</p>
+          </div>
+        </div>
+
+        <div class="feature-empty-panel compact-empty">
+          <div class="empty-illustration">▤</div>
+          <span class="status-pill">چت آنلاین فعال نیست</span>
+          <h2>جای گفت‌وگوها خالیه</h2>
+          <p>
+            پیام خصوصی و گروهی برای کارکرد واقعی به حساب کاربری
+            و زیرساخت لحظه‌ای نیاز داره.
+          </p>
+          <small>وضعیت: <b>هنوز پیاده‌سازی نشده</b></small>
+        </div>
+
+      </section>
+
+      <!-- MISSIONS -->
+      <section class="page" id="page-missions">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">DAILY QUESTS</span>
+            <h1>مأموریت‌های <span class="gradient-text">لویرا</span></h1>
+            <p class="page-lead">
+              چالش‌های کوچیک برای گرم‌کردن موتور بازی.
+            </p>
+          </div>
+        </div>
+
+        <div class="mission-grid">
+
+          <article class="mission-card">
+            <span class="mission-icon">🎯</span>
+            <div>
+              <span class="mission-label">تمرین روزانه</span>
+              <h3>یک دور دوز بازی کن</h3>
+              <p>یک بازی دوز را تا پایان انجام بده.</p>
+            </div>
+            <span class="mission-state">قابل انجام</span>
+          </article>
+
+          <article class="mission-card">
+            <span class="mission-icon">⚡</span>
+            <div>
+              <span class="mission-label">چالش سرعت</span>
+              <h3>واکنشت رو امتحان کن</h3>
+              <p>یک دور تست واکنش انجام بده.</p>
+            </div>
+            <span class="mission-state">قابل انجام</span>
+          </article>
+
+          <article class="mission-card">
+            <span class="mission-icon">✦</span>
+            <div>
+              <span class="mission-label">کاوشگر</span>
+              <h3>بازی‌های لویرا رو کشف کن</h3>
+              <p>فهرست بازی‌ها رو ببین و بازی موردعلاقه‌ات رو ذخیره کن.</p>
+            </div>
+            <span class="mission-state">قابل انجام</span>
+          </article>
+
+        </div>
+
+        <p class="honest-note">
+          پیشرفت مأموریت‌ها در این نسخه فقط روی همین مرورگر ذخیره می‌شه؛
+          جایزه یا رتبه آنلاین فعال نیست.
+        </p>
+
+      </section>
+
+      <!-- SHOP -->
+      <section class="page" id="page-shop">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">CUSTOMIZE YOUR SPACE</span>
+            <h1>فروشگاه <span class="gradient-text">لویرا</span></h1>
+            <p class="page-lead">
+              ظاهر و فضای بازی‌ات رو شخصی‌سازی کن.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-empty-panel compact-empty">
+          <div class="empty-illustration">◇</div>
+          <span class="status-pill">فروشگاه در حال طراحی</span>
+          <h2>ویترین به‌زودی باز می‌شه</h2>
+          <p>
+            آیتم‌های تزئینی، قاب پروفایل و امکانات ویژه بعد از طراحی
+            سیستم حساب و پرداخت نمایش داده می‌شن.
+          </p>
+          <small>وضعیت: <b>هنوز پیاده‌سازی نشده</b></small>
+        </div>
+
+      </section>
+
+      <!-- PROFILE -->
+      <section class="page" id="page-profile">
+
+        <div class="page-header">
+          <div>
+            <span class="section-kicker">PLAYER CARD</span>
+            <h1>پروفایل <span class="gradient-text">من</span></h1>
+            <p class="page-lead">
+              کارت بازیکن محلی تو در لویرا.
+            </p>
+          </div>
+        </div>
+
+        <div class="profile-panel">
+
+          <div class="profile-banner">
+
+            <div class="profile-avatar">L</div>
+
+            <div class="profile-identity">
+              <span class="profile-level">PLAYER PROFILE</span>
+              <h2 id="profileName">بازیکن لویرا</h2>
+              <p>
+                این پروفایل فعلاً فقط روی همین دستگاه ذخیره می‌شه.
+              </p>
+            </div>
+
+            <button class="secondary-button" id="editName" type="button">
+              ویرایش نام
+            </button>
+
+          </div>
+
+          <div class="profile-stats">
+
+            <div>
+              <b id="favoriteCount">۰</b>
+              <span>بازی ذخیره‌شده</span>
+            </div>
+
+            <div>
+              <b>—</b>
+              <span>رتبه آنلاین</span>
+            </div>
+
+            <div>
+              <b>—</b>
+              <span>دوستان</span>
+            </div>
+
+          </div>
+
+          <div class="profile-bottom">
+            <span>شناسه آنلاین: <b>هنوز ساخته نشده</b></span>
+            <span class="status-pill">حالت محلی</span>
+          </div>
+
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">YOUR COLLECTION</span>
+            <h2>بازی‌های محبوب من</h2>
+          </div>
+        </div>
+
+        <div class="favorites-list" id="favoritesList">
+          <p class="empty-favorites">
+            هنوز بازی‌ای ذخیره نکردی.
+            از صفحه بازی‌ها روی ستاره بزن.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <span class="footer-brand">LOYRA<span>®</span></span>
+        <span>ساخته‌شده برای لحظه‌های بهتر.</span>
+        <span>© 2026 LOYRA</span>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" aria-label="ناوبری موبایل">
+
+    <button class="active" type="button" data-page="home">
+      <span>⌂</span>
+      خانه
+    </button>
+
+    <button type="button" data-page="games">
+      <span>▦</span>
+      بازی‌ها
+    </button>
+
+    <button type="button" data-page="rooms">
+      <span>◉</span>
+      اتاق‌ها
+    </button>
+
+    <button type="button" data-page="friends">
+      <span>♧</span>
+      دوستان
+    </button>
+
+    <button type="button" data-page="profile">
+      <span>◎</span>
+      من
+    </button>
+
+  </nav>
+
+  <!-- Game Modal -->
+  <div class="modal-backdrop" id="gameModal" hidden>
+
+    <section
+      class="game-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <button
+        class="modal-close"
+        id="closeModal"
+        type="button"
+        aria-label="بستن"
+      >
+        ×
+      </button>
+
+      <div class="modal-kicker">LOYRA MINI ARCADE</div>
+
+      <h2 id="modalTitle">بازی</h2>
+
+      <div id="modalContent"></div>
+
+    </section>
+
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
