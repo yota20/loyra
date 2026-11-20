@@ -24,6 +24,20 @@
   <!-- Header -->
   <header class="topbar">
 
+    <!-- Mobile Menu Button -->
+    <button
+      class="mobile-menu-toggle"
+      id="mobileMenuToggle"
+      type="button"
+      aria-label="باز کردن منو"
+      aria-expanded="false"
+      aria-controls="mainSidebar"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <a class="brand" href="#" data-go="home" aria-label="صفحه اصلی لویرا">
       <span class="brand-mark"><span>L</span><i></i></span>
       <span class="brand-word">
@@ -50,13 +64,32 @@
 
   </header>
 
+  <!-- Mobile Sidebar Overlay -->
+  <button
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    type="button"
+    aria-label="بستن منو"
+    tabindex="-1"
+  ></button>
+
   <!-- Application Layout -->
   <div class="app-shell">
 
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="mainSidebar" aria-label="منوی اصلی">
+
+      <div class="mobile-sidebar-header">
+        <span>منوی لویرا</span>
+        <button
+          type="button"
+          id="closeMobileMenu"
+          aria-label="بستن منو"
+        >×</button>
+      </div>
 
       <div class="sidebar-top">
+
         <div class="side-label">فضای لویرا</div>
 
         <nav class="side-nav" aria-label="منوی اصلی">
@@ -111,6 +144,7 @@
           </button>
 
         </nav>
+
       </div>
 
       <div class="sidebar-bottom">
@@ -750,36 +784,6 @@
     </main>
 
   </div>
-
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" aria-label="ناوبری موبایل">
-
-    <button class="active" type="button" data-page="home">
-      <span>⌂</span>
-      خانه
-    </button>
-
-    <button type="button" data-page="games">
-      <span>▦</span>
-      بازی‌ها
-    </button>
-
-    <button type="button" data-page="rooms">
-      <span>◉</span>
-      اتاق‌ها
-    </button>
-
-    <button type="button" data-page="friends">
-      <span>♧</span>
-      دوستان
-    </button>
-
-    <button type="button" data-page="profile">
-      <span>◎</span>
-      من
-    </button>
-
-  </nav>
 
   <!-- Game Modal -->
   <div class="modal-backdrop" id="gameModal" hidden>

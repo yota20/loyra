@@ -975,3 +975,66 @@ console.log("LOYRA initialized successfully.");
   });
 
 })();
+
+// =====================================
+// LOYRA - Mobile Sidebar Controller
+// =====================================
+(() => {
+  const menuButton = document.getElementById("mobileMenuToggle");
+  const sidebar = document.getElementById("mainSidebar");
+  const closeButton = document.getElementById("closeMobileMenu");
+  const overlay = document.getElementById("sidebarOverlay");
+
+  if (!menuButton || !sidebar || !closeButton || !overlay) return;
+
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+  function openMenu() {
+    if (!isMobile()) return;
+
+    document.body.classList.add("menu-open");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "بستن منو");
+  }
+
+  function closeMenu(returnFocus = false) {
+    document.body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "باز کردن منو");
+
+    if (returnFocus && isMobile()) {
+      menuButton.focus();
+    }
+  }
+
+  menuButton.addEventListener("click", () => {
+    if (document.body.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  closeButton.addEventListener("click", () => closeMenu(true));
+  overlay.addEventListener("click", () => closeMenu(true));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.body.classList.contains("menu-open")) {
+      closeMenu(true);
+    }
+  });
+
+  // بستن منو بعد از انتخاب صفحه
+  document.addEventListener("click", (event) => {
+    const navigationLink = event.target.closest("[data-page], [data-go]");
+
+    if (navigationLink && isMobile()) {
+      closeMenu();
+    }
+  });
+
+  // بستن منو هنگام رفتن به حالت دسکتاپ
+  window.addEventListener("resize", () => {
+    if (!isMobile()) closeMenu();
+  });
+})();
